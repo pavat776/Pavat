@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MDT112\\การบ้าน\\การบ้าน.csproj": {}
+    "D:\\MDT112\\การบ้าน\\Pavat\\การบ้าน.csproj": {}
   },
   "projects": {
-    "D:\\MDT112\\การบ้าน\\การบ้าน.csproj": {
+    "D:\\MDT112\\การบ้าน\\Pavat\\การบ้าน.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MDT112\\การบ้าน\\การบ้าน.csproj",
+        "projectUniqueName": "D:\\MDT112\\การบ้าน\\Pavat\\การบ้าน.csproj",
         "projectName": "การบ้าน",
-        "projectPath": "D:\\MDT112\\การบ้าน\\การบ้าน.csproj",
+        "projectPath": "D:\\MDT112\\การบ้าน\\Pavat\\การบ้าน.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\MDT112\\การบ้าน\\obj\\",
+        "outputPath": "D:\\MDT112\\การบ้าน\\Pavat\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
