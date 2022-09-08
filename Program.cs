@@ -1,4 +1,4 @@
-﻿class store
+﻿public class store
 {
     private string store_name; 
     private string store_number;
@@ -19,25 +19,26 @@
     {
         return store_number;
     }
-    public void exchange()
+    public int[] exchange(string money)
     {
-        Console.Write("Please input money : ");
-        float money = 0;
-        if (float.TryParse(Console.ReadLine(), out money))
+        float A;
+        int[] KJ = new int[10];
+        if (float.TryParse(money, out A))
         {
-            Console.WriteLine("1000 : {0}", Math.Truncate(money / 1000));
-            Console.WriteLine("500 : {0}", Math.Truncate((money % 1000) / 500));
-            Console.WriteLine("100 : {0}", Math.Truncate(((money % 1000) % 500) / 100));
-            Console.WriteLine("50 : {0}", Math.Truncate((((money % 1000) % 500) % 100) / 50));
-            Console.WriteLine("20 : {0}", Math.Truncate(((((money % 1000) % 500) % 100) % 50) / 20));
-            Console.WriteLine("10 : {0}", Math.Truncate((((((money % 1000) % 500) % 100) % 50) % 20) / 10));
-            Console.WriteLine("2 : {0}", Math.Truncate(((((((money % 1000) % 500) % 100) % 50) % 20) % 10) / 2));
-            Console.WriteLine("1 : {0}", Math.Truncate((((((((money % 1000) % 500) % 100) % 50) % 20) % 10) % 2) / 1));
-            Console.WriteLine("0.50 : {0}", Math.Truncate(((((((((money % 1000) % 500) % 100) % 50) % 20) % 10) % 2) % 1) / 0.50));
-            Console.WriteLine("0.25 : {0}", Math.Truncate((((((((((money % 1000) % 500) % 100) % 50) % 20) % 10) % 2) % 1) % 0.50) / 0.25));
+            KJ[0] = (int)Math.Truncate(A / 1000);
+            KJ[1] = (int)Math.Truncate((A % 1000) / 500);
+            KJ[2] = (int)Math.Truncate(((A % 1000) % 500) / 100);
+            KJ[3] = (int)Math.Truncate((((A % 1000) % 500) % 100) / 50);
+            KJ[4] = (int)Math.Truncate(((((A % 1000) % 500) % 100) % 50) / 20);
+            KJ[5] = (int)Math.Truncate((((((A % 1000) % 500) % 100) % 50) % 20) / 10);
+            KJ[6] = (int)Math.Truncate(((((((A % 1000) % 500) % 100) % 50) % 20) % 10) / 2);
+            KJ[7] = (int)Math.Truncate((((((((A % 1000) % 500) % 100) % 50) % 20) % 10) % 2) / 1);
+            KJ[8] = (int)Math.Truncate(((((((((A % 1000) % 500) % 100) % 50) % 20) % 10) % 2) % 1) / 0.50);
+            KJ[9] = (int)Math.Truncate((((((((((A % 1000) % 500) % 100) % 50) % 20) % 10) % 2) % 1) % 0.50) / 0.25);
         }
         else
             throw new Exception("Please input new data.");
+        return KJ;
     }
         
 }
@@ -56,14 +57,27 @@ class Bigbrain
 
         store store1 = new store(x,y,z,p);
 
-        Console.WriteLine("—--------- Shop Information —-----");
+        Console.WriteLine("—--------- Shop Information —---------");
         Console.WriteLine("Name : {0}",store1.Store_Name());
         Console.WriteLine("Number : {0}", store1.Store_Number());
         Console.WriteLine("Owner Name : {0}", store1.Name);
         Console.WriteLine("Registered Value : {0}", store1.Value);
         Console.WriteLine("—-----------------------------------------------------");
+        
+        Console.Write("Please input money : ");
+        
+        string money = Console.ReadLine();
 
-        store1.exchange();
+        int[]output = store1.exchange(money);
+        Console.WriteLine("1000 : {0}", output[0]);
+        Console.WriteLine("500 : {0}", output[1]);
+        Console.WriteLine("100 : {0}", output[2]);
+        Console.WriteLine("50 : {0}", output[3]);
+        Console.WriteLine("20 : {0}", output[4]);
+        Console.WriteLine("10 : {0}", output[5]);
+        Console.WriteLine("2 : {0}", output[6]);
+        Console.WriteLine("1 : {0}", output[7]);
+        Console.WriteLine("0.50 : {0}", output[8]);
+        Console.WriteLine("0.25 : {0}", output[9]);
     }
 }
-
